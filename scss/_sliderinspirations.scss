@@ -1,0 +1,47 @@
+.slider {
+    width: 100%;
+    background-color: white;
+    margin-bottom: 120px;
+    position: relative;
+    padding: 0 42px;
+    border-top: 0.5px solid $third-color;
+    p {
+        padding-top: 60px;
+        text-align: center;
+        color: $secondary-color;
+        font-size: 24px;
+    }
+    .arrow-left {
+        height: 120px;
+        width: 42px;
+        position: absolute;
+        line-height: 120px;
+        text-align: center;
+        color: white;
+        left: 0;
+        top:142px;
+        background-color: $fourth-color;
+        font-size: 20px;
+    }
+    .arrow-right {
+        height: 120px;
+        width: 42px;
+        position: absolute;
+        line-height: 120px;
+        text-align: center;
+        color: white;
+        right: 0;
+        top: 142px;
+        background-color: $fourth-color;
+        font-size: 20px;
+    }
+    ul {
+        font-size: 0;
+        margin-top: 60px;
+        li {
+            display: inline-block;
+            width: calc(16.666% - 30px);
+            margin: 0 15px;
+        }
+    }
+}
