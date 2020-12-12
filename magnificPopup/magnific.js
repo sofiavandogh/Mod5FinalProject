@@ -1,4 +1,6 @@
-$('.main-slider-container').magnificPopup({
-    delegate: 'a', 
-    type: 'image'
-  });
+$('.gallery-item').magnificPopup({
+  type: 'image',
+  gallery:{
+    enabled:true
+  }
+});
