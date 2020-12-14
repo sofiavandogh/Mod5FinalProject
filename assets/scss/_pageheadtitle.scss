@@ -1,0 +1,48 @@
+.general-page-title {
+    color: $primary-color;
+    text-align: center;
+    width: 100%;
+    padding: 6em 0 3em 0;
+    position: relative;
+    h1 {
+    text-transform: uppercase;
+    font-family: $primary-font;
+    font-size: 3vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    @include media(0,512px){
+        font-size: 6vw;
+    }
+    }
+    p {
+    font-size: 1.5vw;
+    letter-spacing: 1px;
+    font-style: italic;
+    color: $secondary-color;
+    padding-top: 1em;
+    font-family: $secondary-font;
+    @include media(0,512px){
+        font-size: 3vw;
+        line-height: 18px;
+    }
+    }
+    ul.general-page-breadcrumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 20px;
+        li {
+            display: inline;
+            color: $fourth-color;
+            text-transform: uppercase;
+            font-family: $primary-font;
+            a {
+                color: $primary-color;
+            }
+        }
+        li:nth-child(n+2)::before{
+            content: " / ";
+            color: $primary-color;
+        }
+    }
+}

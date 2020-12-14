@@ -1,0 +1,71 @@
+.hero {
+    width: 100%;
+    color: $primary-color;
+    background-color: white;
+    position: relative;
+        .hero-content {
+            text-align: center;
+            width: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            h1 {
+                text-transform: uppercase;
+                font-family: $primary-font;
+                font-size: 5vw;
+                    @include media(0,512px){
+                    font-size: 6vw;
+                    }
+            }
+            p {
+                font-size: 2vw;
+                letter-spacing: 1px;
+                font-style: italic;
+                padding-top: 2em;
+                font-family: $secondary-font;
+                text-shadow: 2px 2px 1px #fff;
+                    @include media(0,512px){
+                        font-size: 3vw;
+                        line-height: 18px;
+                    }
+            }
+            .btn {
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-family: $primary-font;
+                text-align: center;
+                padding: 1.8em 4em;
+                background-color: #f7f8f7;
+                border: 1px solid white;
+                margin-top: 40px;
+                &:hover {
+                    color: #ffffff;       
+                    background-color: $fourth-color;
+                    border: 1px solid $fourth-color;
+                    cursor: pointer;
+                }
+                &:focus {
+                    visibility: hidden;
+                }
+                @include media(0,900px){
+                    font-size: 0.7rem;
+                    padding: 1.5em 2em;
+                }
+                @include media(0,512px){
+                    font-size: 0.4rem;
+                    padding: 1em 1.5em;
+                    margin-top: 2em;
+                }
+            }
+        }
+        .hero-container img {
+            width: 100%;
+            max-width: 100%;
+            opacity: 0.8;
+            z-index: -2;
+        }
+}    
+
