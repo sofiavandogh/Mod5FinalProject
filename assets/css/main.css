@@ -1062,11 +1062,11 @@ body {
   padding-bottom: 10px;
 }
 
-.contact-form .contact-form-container .dropdown {
+.contact-form .contact-form-container .form-item {
   margin-bottom: 50px;
 }
 
-.contact-form .contact-form-container .dropdown select {
+.contact-form .contact-form-container .form-item select {
   width: 100%;
   height: 50px;
   border: 1px solid #b8b2b2;
@@ -1075,17 +1075,11 @@ body {
   color: gray;
 }
 
-.contact-form .contact-form-container .dropdown select:focus {
+.contact-form .contact-form-container .form-item select:focus {
   outline: none;
 }
 
-.contact-form .contact-form-container .name {
-  margin-bottom: 50px;
-  width: 48%;
-  float: left;
-}
-
-.contact-form .contact-form-container .name input {
+.contact-form .contact-form-container .form-item input {
   width: 100%;
   height: 50px;
   border: 1px solid #b8b2b2;
@@ -1094,34 +1088,17 @@ body {
   color: gray;
 }
 
-.contact-form .contact-form-container .name input:focus {
+.contact-form .contact-form-container .form-item input:focus {
   outline: none;
 }
 
-.contact-form .contact-form-container .email {
-  margin-bottom: 50px;
-  width: 48%;
-  float: right;
+.contact-form .contact-form-container .form-item input:-webkit-autofill, .contact-form .contact-form-container .form-item input:-webkit-autofill:hover, .contact-form .contact-form-container .form-item input:-webkit-autofill:focus, .contact-form .contact-form-container .form-item input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: gray;
 }
 
-.contact-form .contact-form-container .email input {
-  width: 100%;
-  height: 50px;
-  border: 1px solid #b8b2b2;
-  padding: 10px 10px;
-  background-color: white;
-  color: gray;
-}
-
-.contact-form .contact-form-container .email input:focus {
-  outline: none;
-}
-
-.contact-form .contact-form-container .message {
-  margin-bottom: 50px;
-}
-
-.contact-form .contact-form-container .message textarea {
+.contact-form .contact-form-container .form-item textarea {
   width: 100%;
   height: 250px;
   border: 1px solid #b8b2b2;
@@ -1130,15 +1107,31 @@ body {
   color: gray;
 }
 
-.contact-form .contact-form-container .message textarea:focus {
+.contact-form .contact-form-container .form-item textarea:focus {
   outline: none;
 }
 
-.contact-form .contact-form-container .send-button {
+.contact-form .contact-form-container .form-item .error {
+  color: red;
+  font-size: 90%;
+  padding-top: 5px;
+}
+
+.contact-form .contact-form-container .form-left {
+  width: 48%;
+  float: left;
+}
+
+.contact-form .contact-form-container .form-right {
+  width: 48%;
+  float: right;
+}
+
+.contact-form .contact-form-container .form-button {
   text-align: center;
 }
 
-.contact-form .contact-form-container .send-button input[type=submit] {
+.contact-form .contact-form-container .form-button input[type=submit] {
   width: 195px;
   height: 50px;
   background-color: #b64557;
@@ -1151,56 +1144,15 @@ body {
   font-size: 1vw;
 }
 
-.contact-form .contact-form-container .send-button input[type=submit]:hover {
+.contact-form .contact-form-container .form-button input[type=submit]:hover {
   background-color: #b65867;
   border: 1px solid #b65867;
 }
 
-.contact-form .contact-form-container .send-button input[type=submit]:focus {
+.contact-form .contact-form-container .form-button input[type=submit]:focus {
   outline: none;
 }
 
-/*  select {
-            line-height: 42px;
-            width:100%;
-            border: 1px solid $secondary-color;
-            padding: 10px 10px;
-            background-color: white;
-        }
-        label {
-            text-transform: uppercase;
-        }
-        input[type=name] {
-            line-height: 42px;
-            width:40%;
-        }
-        input[type=email] {
-            line-height: 42px;
-            width:40%;
-        }
-        textarea {
-            width: 100%;
-            margin-top: 40px;
-        }
-        input[type=submit] {
-            width:195px;
-            height: 50px;
-            background-color: $fourth-color;
-            border: 1px solid $fourth-color;
-            color: white;
-            font-family: $primary-font;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            margin: 30px 0 0 0;
-            cursor: pointer;
-            font-size: 1vw;
-            &:hover {
-                background-color: rgb(182, 88, 103);
-                border: 1px solid rgb(182, 88, 103);
-            }
-        }
-    }
-} */
 .faq {
   width: 80%;
   margin: 50px auto 80px auto;

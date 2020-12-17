@@ -103,30 +103,34 @@
     <!--contact form-->
 	<section class="contact-form">
 		<div class="contact-form-container">
-			<form action="">
-				<div class="dropdown">
+			<form name="contactForm" onsubmit="return validateFormItems()" action="">
+				<div class="form-item">
                 	<label for="contact-dropdown">Topic</label>
-                	<select name="contact-dropdown" required>		
-                    	<option value = "general-info" selected>General Information</option>
-                    	<option value = "prod-availability">Product Availability</option>
-                    	<option value = "delivery">Delivery Policy</option>
-                    	<option value = "return">Return Policy</option>
+                	<select name="contact-dropdown" id="contact-dropdown">	
+						<option selected>Select</option>
+                    	<option>General Information</option>
+                    	<option>Product Availability</option>
+                    	<option>Delivery Policy</option>
+                    	<option>Return Policy</option>
 					</select>
+					<div class="error" id="topicError"></div>
 				</div>
-				<div class="name">
+				<div class="form-item form-left">
                 	<label for="contact-name">Name</label>
-					<input type="text" name="contact-name" required>
+					<input type="text" id="contact-name" name="contact-name">
+					<div class="error" id="nameError"></div>
 				</div>
-				<div class="email">
+				<div class="form-item form-right">
                 	<label for="contact-email">E-Mail</label>
-					<input type="text" name="contact-email" required>
+					<input type="text" id="contact-email" name="contact-email">
+					<div class="error" id="emailError"></div>
 				</div>
-				<div class="message">
+				<div class="form-item">
                 	<label for="contact-message">Message</label>
-					<textarea name="contact-message" required></textarea>
+					<textarea name="contact-message"></textarea>
 				</div>
-				<div class="send-button">
-					<input type="submit" value="Send">
+				<div class="form-button">
+					<input type="submit" id="contact-submit-button" value="Send">
 				</div>
 			</form>
 		</div>
@@ -232,6 +236,7 @@
   <!--end background container-->
 
 <script src="./assets/js/vendor/jquery-3.5.1.min.js"></script>
+<script src="./assets/js/contactpage-form.js"></script>
 <script type="text/javascript" src="./assets/js/vendor/slick/slick.min.js"></script>
 <script src="./assets/js/vendor/magnificPopup/jquery.magnific-popup.min.js"></script>
 <script src="./assets/js/vendor/magnificPopup/magnific.js"></script>
