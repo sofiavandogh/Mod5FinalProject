@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>FAQ Page Mod5 Final Work</title>
+	<title>Contact Page Mod5 Final Work</title>
 	<!--Generic meta-->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1, initial-scale = 1.0, shrink-to-fit=no">
@@ -78,7 +78,7 @@
 					<li><a href="#about" target="_blank">About</a></li>
 				</ul>
 			</nav>	
-			<!--end left navigation-->
+			<!--end of left navigation-->
 
 			<!--right navigation-->	
 			<nav class="header-nav-right">	
@@ -88,50 +88,64 @@
 					<li><a href="#search"><span class="icon-search"></span></a></li>
 				</ul>
 			</nav>
-			<!--end right navigation-->
+			<!--end of right navigation-->
 		</div>		
     </header>
 	<!--end header-->
 	
-	<!--page title-->
+	<!--page headtitle-->
 	<div class="general-page-title">
-		<h1>Frequently Asked Questions</h1>
+		<h1>Contact</h1>
 		<p>Lorem ipsum dolor sit amet enim. Etiam ullamcorp uspendisse a pellentesque.</p>
 		<ul class="general-page-breadcrumb">
 			<li><a href="#">Home</a></li>
-			<li>FAQ</li>
+			<li>Contact</li>
 		</ul>
 	</div>
-	<!--end of page title-->
+	<!--end of page headtitle-->
     
-    <!--FAQ's accordeon-->
-	<section class="faq">
-		<div class="faq-accordeon">
-            <ul>
-                <li class="question">1. Frequently Asked Question Number 1?<span class="icon-circle-down"></span></li>
-                <li class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-                <li class="question">2. Frequently Asked Question Number 2?<span class="icon-circle-down"></span></li>
-                <li class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li class="question">3. Frequently Asked Question Number 3?<span class="icon-circle-down"></span></li>
-                <li class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-                <li class="question">4. Frequently Asked Question Number 4?<span class="icon-circle-down"></span></li>
-                <li class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-            </ul>
-        </div>
-        <div id="faq-accordeon-nthchild">
-            <ul>
-                <li>5. Frequently Asked Question Number 5?<span class="icon-circle-down"></span></li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-                <li>6. Frequently Asked Question Number 6?<span class="icon-circle-down"></span></li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li>7. Frequently Asked Question Number 7?<span class="icon-circle-down"></span></li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-                <li>8. Frequently Asked Question Number 8?<span class="icon-circle-down"></span></li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-            </ul>
+    <!--contact form-->
+	<section class="contact-form">
+		<div class="contact-form-container">
+			<form action="">
+
+				<div class="form-item">
+                	<label for="contact-topic">Topic</label>
+                	<select name="contact-topic" id="contact-topic">	
+						<option selected>Select</option>
+                    	<option>General Information</option>
+                    	<option>Product Availability</option>
+                    	<option>Delivery Policy</option>
+                    	<option>Return Policy</option>
+					</select>
+					<div class="error" id="topicError"></div>
+                </div>
+                
+				<div class="form-item form-left">
+                	<label for="contact-name">Name</label>
+					<input type="text" id="contact-name" name="contact-name">
+					<div class="error" id="nameError"></div>
+                </div>
+                
+				<div class="form-item form-right">
+                	<label for="contact-email">E-Mail</label>
+					<input type="text" id="contact-email" name="contact-email">
+					<div class="error" id="emailError"></div>
+                </div>
+                
+				<div class="form-item">
+                	<label for="contact-message">Message</label>
+					<textarea name="contact-message"></textarea>
+                </div>
+                
+				<div class="form-button">
+					<input type="submit" id="contact-submit-button" value="Send">
+                </div>
+                
+			</form>
 		</div>
 	</section>
-    <!--end of FAQ's accordeon-->
+    <!--end of contact form-->
     
 	<!--slider inspirations-->
 	<section class="slider-inspirations">
@@ -177,7 +191,7 @@
 			</div>
 		</div>
 	</section>
-	<!--end slider inspirations-->
+	<!--end of slider inspirations-->
 	
 	<!--footer-->
 	<footer>
@@ -227,13 +241,13 @@
 			</nav>
 	  	</div>
 	</footer>
-	<!--end footer-->
-  
+	<!--end of footer-->
+
   </div>
   <!--end background container-->
-  
+
 <script src="./assets/js/vendor/jquery-3.5.1.min.js"></script>
-<script src="./assets/js/faqpage-accordeon.js"></script>
+<script src="./assets/js/contactpage-form2.js"></script>
 <script type="text/javascript" src="./assets/js/vendor/slick/slick.min.js"></script>
 <script src="./assets/js/vendor/magnificPopup/jquery.magnific-popup.min.js"></script>
 <script src="./assets/js/vendor/magnificPopup/magnific.js"></script>
