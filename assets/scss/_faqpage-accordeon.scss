@@ -3,6 +3,7 @@
     margin: 50px auto 80px auto;
     font-family: $primary-font;
     color: $primary-color;
+    //Accordeon #1 using classes
     .question {
         font-weight: bold;
         text-transform: uppercase;
@@ -10,12 +11,23 @@
         background-color: rgb(223, 215, 215);
         margin-bottom: 20px;
         position: relative;
+        @include media(0,900px) {
+            font-size: 80%;
+        }  
+        @include media(0,512px) {
+            font-size: 55%;
+        }   
         span {
             color: $fourth-color;
             font-size: 24px;
             position: absolute;
             right: 0;
             padding-right: 15px;
+            cursor: pointer;
+            @include media(0,900px) {
+                margin-top: 5px;
+                line-height: 0;           
+            }
         }
     }
     .answer {
@@ -24,6 +36,7 @@
         line-height: 24px;
         margin-bottom: 20px;
     }
+    //Accordeon #2 using pseudo class nth-child
     #faq-accordeon-nthchild {
         ul {
             position: relative;
@@ -44,6 +57,10 @@
             position: absolute;
             right: 0;
             margin: -10px 5px;
+            cursor: pointer;
+            @include media(0,900px) {
+                margin: -15px 5px;
+            }  
         }
         ul :nth-child(odd) {
             font-weight: bold;
@@ -51,6 +68,12 @@
             padding: 20px 10px;
             background-color: $third-color;
             margin-bottom: 20px;
+            @include media(0,900px) {
+                font-size: 80%;
+            }  
+            @include media(0,512px) {
+                font-size: 55%;
+            }  
         }
     }
 }

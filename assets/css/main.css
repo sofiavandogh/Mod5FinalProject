@@ -85,6 +85,8 @@ body {
 .header-nav-container {
   width: 100%;
   height: 80px;
+  top: 60px;
+  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -990,36 +992,6 @@ body {
   position: relative;
 }
 
-.general-page-title h1 {
-  text-transform: uppercase;
-  font-family: "Lato", sans-serif;
-  font-size: 3vw;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-@media (min-width: 0) and (max-width: 512px) {
-  .general-page-title h1 {
-    font-size: 6vw;
-  }
-}
-
-.general-page-title p {
-  font-size: 1.5vw;
-  letter-spacing: 1px;
-  font-style: italic;
-  color: gray;
-  padding-top: 1em;
-  font-family: "Lora", sans-serif;
-}
-
-@media (min-width: 0) and (max-width: 512px) {
-  .general-page-title p {
-    font-size: 3vw;
-    line-height: 18px;
-  }
-}
-
 .general-page-title ul.general-page-breadcrumb {
   position: absolute;
   top: 0;
@@ -1043,6 +1015,43 @@ body {
   color: #303030;
 }
 
+.general-page-title h1 {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 3vw;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .general-page-title h1 {
+    font-size: 4vw;
+    line-height: 24px;
+  }
+}
+
+.general-page-title p {
+  font-size: 1.5vw;
+  letter-spacing: 1px;
+  font-style: italic;
+  color: gray;
+  padding-top: 1em;
+  font-family: "Lora", sans-serif;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .general-page-title p {
+    font-size: 3vw;
+    line-height: 36px;
+  }
+}
+
+@media (min-width: 0) and (max-width: 512px) {
+  .general-page-title p {
+    line-height: 24px;
+  }
+}
+
 .contact-form {
   width: 100%;
 }
@@ -1064,6 +1073,7 @@ body {
 
 .contact-form .contact-form-container .form-item {
   margin-bottom: 50px;
+  position: relative;
 }
 
 .contact-form .contact-form-container .form-item select {
@@ -1112,19 +1122,45 @@ body {
 }
 
 .contact-form .contact-form-container .form-item .error {
-  color: red;
+  color: #b64557;
   font-size: 90%;
   padding-top: 5px;
+  position: absolute;
 }
 
-.contact-form .contact-form-container .form-left {
-  width: 48%;
-  float: left;
+.contact-form .contact-form-container .form-doublecolumn {
+  text-align: justify;
 }
 
-.contact-form .contact-form-container .form-right {
+.contact-form .contact-form-container .form-doublecolumn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+}
+
+.contact-form .contact-form-container .form-doublecolumn .form-left {
+  display: inline-block;
   width: 48%;
-  float: right;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .contact-form .contact-form-container .form-doublecolumn .form-left {
+    display: block;
+    width: 100%;
+  }
+}
+
+.contact-form .contact-form-container .form-doublecolumn .form-right {
+  display: inline-block;
+  width: 48%;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .contact-form .contact-form-container .form-doublecolumn .form-right {
+    display: block;
+    width: 100%;
+  }
 }
 
 .contact-form .contact-form-container .form-button {
@@ -1141,7 +1177,7 @@ body {
   text-transform: uppercase;
   padding: 10px 15px;
   cursor: pointer;
-  font-size: 1vw;
+  font-size: 100%;
 }
 
 .contact-form .contact-form-container .form-button input[type=submit]:hover {
@@ -1151,6 +1187,34 @@ body {
 
 .contact-form .contact-form-container .form-button input[type=submit]:focus {
   outline: none;
+}
+
+.contact-form .contact-form-container .popup-modal {
+  position: fixed;
+  display: none;
+  text-align: center;
+  z-index: 3;
+  left: 33.33%;
+  top: 40%;
+  width: 33.33%;
+  background-color: #b64557;
+}
+
+.contact-form .contact-form-container .popup-modal .close-modal {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.contact-form .contact-form-container .popup-modal p {
+  color: white;
+  padding: 15px 25px;
+  font-size: 18px;
 }
 
 .faq {
@@ -1169,12 +1233,32 @@ body {
   position: relative;
 }
 
+@media (min-width: 0) and (max-width: 900px) {
+  .faq .question {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 0) and (max-width: 512px) {
+  .faq .question {
+    font-size: 55%;
+  }
+}
+
 .faq .question span {
   color: #b64557;
   font-size: 24px;
   position: absolute;
   right: 0;
   padding-right: 15px;
+  cursor: pointer;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .faq .question span {
+    margin-top: 5px;
+    line-height: 0;
+  }
 }
 
 .faq .answer {
@@ -1205,6 +1289,13 @@ body {
   position: absolute;
   right: 0;
   margin: -10px 5px;
+  cursor: pointer;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .faq #faq-accordeon-nthchild ul :nth-child(odd) span {
+    margin: -15px 5px;
+  }
 }
 
 .faq #faq-accordeon-nthchild ul :nth-child(odd) {
@@ -1213,5 +1304,17 @@ body {
   padding: 20px 10px;
   background-color: #b8b2b2;
   margin-bottom: 20px;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .faq #faq-accordeon-nthchild ul :nth-child(odd) {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 0) and (max-width: 512px) {
+  .faq #faq-accordeon-nthchild ul :nth-child(odd) {
+    font-size: 55%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

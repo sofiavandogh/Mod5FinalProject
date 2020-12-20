@@ -1,26 +1,40 @@
-function alertError(elemId, errorMsg) {
-    document.getElementById(elemId).innerHTML = errorMsg;
+//Get elements: "send" button; modal window; close modal cross icon
+
+let submitButton = document.querySelector('#contact-submit-button');
+let modalPopup = document.querySelector('#modal');
+let closeModal = document.querySelector('.close-modal'); 
+
+//Error Message appears when form is filled in incorrectly
+function alertError(elementId, errorMessage) {
+    document.getElementById(elementId).innerHTML = errorMessage;
 }
 
-function validateFormItems() {
-    let dropdown = document.querySelector('#contact-dropdown').value;
-    let name = document.querySelector('#contact-name').value;
-    let email = document.querySelector('#contact-email').value;
-    
+//Opens Modal window when whole form is filled in correctly
+function openModal() {
+    modalPopup.style.display = "block";
+}
+
+//Form validates 3 required items: topic, name and email (if left blank or filled in incorrectly). Message textarea is not required.
+let validateForm = (e) => {
+    e.preventDefault();
+    let topic = document.querySelector('#contact-topic');
+    let userName = document.querySelector('#contact-name');
+    let userEmail = document.querySelector('#contact-email');
+
     let topicError = nameError = emailError = true;
 
-    if(dropdown === 'Select') {
+    if(topic.value === 'Select') {
         alertError('topicError', 'Please, select one topic');
     } else {
         alertError('topicError', '');
         topicError = false;
     }
 
-    if(name === '') {
+    if(userName.value === '') {
         alertError('nameError', 'Please, enter your name');
     } else {
-        let regex = /^[a-zA-Z\s]+$/;                
-        if(regex.test(name) === false) {
+        let nameValidation = /^[a-zA-Z\s]+$/;                
+        if(nameValidation.test(userName.value) === false) {
             alertError('nameError', 'Please, enter a valid name');
         } else {
             alertError('nameError', '');
@@ -28,47 +42,26 @@ function validateFormItems() {
         }
     }
 
-    if(email === '') {
+    if(userEmail.value === '') {
         alertError('emailError', 'Please, enter your email');
     } else {
-        let regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if(regex.test(email) == false) {
+        let emailValidation = /\S+@\S+\.\S+/;
+        if(emailValidation.test(userEmail.value) === false) {
             alertError('emailError', 'Please, enter a valid email');
         } else {
             alertError('emailError', '');
             emailError = false;
         }
     }
-
+    //If the 3 items are filled in correctly, form opens Modal window, which can be closed clicking in the cross icon
     if((topicError || nameError || emailError) === true) {
         return false;
     } else {
-        alert('Thank you for contacting us. We will get back to you shortly.');
+        openModal();
     }
-};
-
-
-
-
-
-
-
-
-/* function validateFormItems(){
-    let dropdown = document.querySelector("#contact-dropdown");
-    let nameTextInput = nameText.value;
-    if(nameTextInput === ''){
-        alert("Please, enter your name.");
+    closeModal.onclick = function() {
+        modalPopup.style.display = "none";
     }
-    }
+}
 
-
-let button = document.querySelector("#contact-submit-button");
-
-button.addEventListener("click",validarName); */
-
-/* let text = document.querySelectorAll("input");
-for(i=0; i< text.length ; ++i){
-    text[i].addEventListener("input",mostraAlteracao);
-
-} */
+submitButton.addEventListener('click', validateForm);

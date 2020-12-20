@@ -2,7 +2,7 @@
     @media (min-width: #{$smallerValue}) and (max-width: $biggerValue) {
       @content;
     }
-  }
+}
 
 @mixin imagelayer {
     background: rgba(255, 255, 255, 0.1);
